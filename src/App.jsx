@@ -1,7 +1,13 @@
-import IndexRouter from './router/IndexRouter';
-
+import { Routes, Route } from 'react-router-dom'
+import routes from './router/router'
 function App() {
-  return <IndexRouter></IndexRouter>;
+  return (
+    <Routes>
+      {routes.map((route) => (
+        <Route key={route.path} path={route.path} element={route.element} />
+      ))}
+    </Routes>
+  )
 }
 
-export default App;
+export default App
