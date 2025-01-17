@@ -1,17 +1,17 @@
-import React, { useEffect, useState } from 'react'
-import { Layout } from 'antd'
-import TopHeader from '../../components/Index/TopHeader'
-import AiRouter from '../../components/Index/AiRouter'
-import SideMenu from '../../components/Index/SideMenu'
-const { Content } = Layout
+import React, { useEffect, useState } from 'react';
+import { Layout } from 'antd';
+import TopHeader from '../../components/Index/TopHeader';
+import AiRouter from '../../components/Index/AiRouter';
+import SideMenu from '../../components/Index/SideMenu';
+const { Content } = Layout;
 export default function Index() {
   return (
     <Layout style={{ minHeight: '100vh' }}>
       <SideMenu />
-      <Layout className='site-layout'>
+      <Layout className="site-layout">
         <TopHeader />
         <Content
-          className='site-layout-background'
+          className="site-layout-background"
           style={{
             margin: '24px 16px',
             padding: 24,
@@ -23,5 +23,5 @@ export default function Index() {
         </Content>
       </Layout>
     </Layout>
-  )
+  );
 }
