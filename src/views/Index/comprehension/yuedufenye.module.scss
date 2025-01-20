@@ -1,0 +1,51 @@
+/* 优化后的样式 */
+.layout-content {
+	padding: 20px;
+	margin-top: 20px;
+	background: #fff;
+	border-radius: 8px;
+}
+
+.uploadBtn {
+	background-color: #52c41a;
+	border: none;
+	color: white;
+
+	&:hover {
+		background-color: #4caf50;
+	}
+}
+
+.nav1 {
+	font-size: 18px;
+	font-weight: 600;
+}
+
+.nav2 {
+	.ant-tabs-nav {
+		padding: 0;
+		margin: 0;
+		border: none;
+	}
+
+	.ant-tabs-tab {
+		font-weight: 500;
+		color: #333;
+		background-color: transparent;
+		padding: 8px 20px;
+		margin-right: 15px;
+		transition: background-color 0.3s ease, color 0.3s ease;
+		border-radius: 8px;
+		font-size: 16px;
+
+		&:hover {
+			background-color: #1890ff;
+			color: white;
+		}
+	}
+
+	.ant-tabs-tab-active {
+		background-color: #1890ff;
+		color: white;
+	}
+}
