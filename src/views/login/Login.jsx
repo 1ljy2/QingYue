@@ -1,27 +1,27 @@
-import React, { useState } from 'react';
-import { Button, Form, Input, message } from 'antd';
-import { LockOutlined, UserOutlined } from '@ant-design/icons';
-import { useNavigate } from 'react-router-dom'; // 导入 useNavigate
+import React, { useState } from 'react'
+import { Button, Form, Input, message } from 'antd'
+import { LockOutlined, UserOutlined } from '@ant-design/icons'
+import { useNavigate } from 'react-router-dom' // 导入 useNavigate
 
 export default function Login() {
-  const navigate = useNavigate(); // 使用 useNavigate 钩子
+  const navigate = useNavigate() // 使用 useNavigate 钩子
 
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(false)
 
   const onFinish = (value) => {
-    setLoading(true); // 设置加载状态
-    console.log(value);
+    setLoading(true) // 设置加载状态
+    console.log(value)
     // 登录验证示例，可以替换成实际的 API 请求
     setTimeout(() => {
       if (value.username === 'admin' && value.password === '123456') {
-        localStorage.setItem('token', 'some-token');
-        navigate('/home'); // 登录成功后跳转
+        localStorage.setItem('token', 'some-token')
+        navigate('/home') // 登录成功后跳转
       } else {
-        message.error('用户名或密码错误');
+        message.error('用户名或密码错误')
       }
-      setLoading(false); // 请求完成，取消加载状态
-    }, 1000);
-  };
+      setLoading(false) // 请求完成，取消加载状态
+    }, 1000)
+  }
 
   return (
     <div
@@ -69,37 +69,37 @@ export default function Login() {
           欢迎使用轻阅AI
         </div>
         <Form
-          name="normal_login"
-          className="login-form"
+          name='normal_login'
+          className='login-form'
           initialValues={{ remember: true }}
           onFinish={onFinish}
         >
           <Form.Item
-            name="username"
+            name='username'
             rules={[{ required: true, message: '请输入用户名!' }]}
           >
             <Input
-              prefix={<UserOutlined className="site-form-item-icon" />}
-              placeholder="用户名"
+              prefix={<UserOutlined className='site-form-item-icon' />}
+              placeholder='用户名'
             />
           </Form.Item>
 
           <Form.Item
-            name="password"
+            name='password'
             rules={[{ required: true, message: '请输入密码!' }]}
           >
             <Input
-              prefix={<LockOutlined className="site-form-item-icon" />}
-              type="password"
-              placeholder="密码"
+              prefix={<LockOutlined className='site-form-item-icon' />}
+              type='password'
+              placeholder='密码'
             />
           </Form.Item>
 
           <Form.Item>
             <Button
-              type="primary"
-              htmlType="submit"
-              className="login-form-button"
+              type='primary'
+              htmlType='submit'
+              className='login-form-button'
               style={{
                 width: '100%',
                 backgroundColor: '#1890ff', // 自定义按钮颜色
@@ -112,5 +112,5 @@ export default function Login() {
         </Form>
       </div>
     </div>
-  );
+  )
 }

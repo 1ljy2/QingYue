@@ -1,0 +1,124 @@
+.layout-in {
+
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+  background-color:#f5f5f5;
+
+  .content-in {
+    height: 100%;
+    margin-top: 10px;
+
+    .modern1 {
+      position: relative;
+      width: 100%;
+      height: 400px;
+      border: 3px solid #dedddd;
+      border-radius: 20px;
+  background: linear-gradient(135deg, #808688, #b6b9b9, #828686);
+    /* 渐变色背景 */
+
+      margin: 0 auto;
+
+      .selection {
+        float: right;
+        margin: 20px 15px 0px 0px;
+
+        .text {
+          display: inline-block;
+          margin: 0 20px;
+        }
+
+        .menu {
+          background: rgb(23, 23, 24);
+          display: inline-block;
+          border-radius: 18px;
+          padding: 10px;
+        }
+      }
+
+      .jieshao {
+        position: absolute;
+        top: 50%;
+        left: 20%;
+        margin-top: -100px;
+        width: 400px;
+        height: 200px;
+
+        .title {
+          font-size: 36px;
+          font-weight: 600;
+          margin: 35px 0 15px 0;
+        }
+
+        .text {
+          font-size: 26px;
+          margin-bottom: 15px;
+        }
+
+        .p1 {
+          margin-bottom: 10px;
+        }
+      }
+    }
+
+    .modern2 {
+      width: 80%;
+      height: auto;
+      margin: 60px auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+
+      h3 {
+        font-size: 18px;
+        font-weight: 500;
+        padding-top: 5px;
+        margin-bottom: 8px;
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+      }
+
+      p {
+        margin-bottom: 1px;
+        font-size: 12px;
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+      }
+
+      .word {
+        float: left;
+        width: 120px;
+        height: 80px;
+        padding-top: 5px;
+        margin: 14px 0 20px 29px;
+      }
+
+      .icon {
+        float: left;
+        width: 40px;
+        height: 80px;
+        margin: 20px 0 20px 0;
+        line-height: 80px;
+        text-align: center;
+      }
+
+
+      .txt,.wd,.pic {
+          display: inline-block;
+            width: 200px;
+            height: 120px;
+            margin: 2vw 1vw;
+              /* 使用视口单位设置外边距 */
+            color: #fff;
+            background: rgba(14, 15, 14, 0.9);
+            border: 2px solid rgb(204, 204, 204, 0.2);
+            border-radius: 20px;
+              transition: transform 0.3s, box-shadow 0.3s;
+                /* 添加过渡效果 */
+      }
+      .txt:hover,.wd:hover,.pic:hover{
+              transform: translateY(-5px);
+                box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+             }
+    }
+  }
+}

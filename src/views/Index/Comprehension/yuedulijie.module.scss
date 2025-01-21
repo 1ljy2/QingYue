@@ -1,0 +1,107 @@
+.modern1 {
+  background: linear-gradient(135deg, rgba(0, 0, 0, 0.6), rgba(255, 255, 255, 0.6)),
+    url('/background1.png') center/cover no-repeat;
+  padding: 60px 20px;
+  text-align: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
+  /* 圆角效果 */
+  color: #fff;
+  /* 白色文字确保与黑白背景对比 */
+}
+
+.jieshao {
+  max-width: 800px;
+  margin: 0 auto;
+  z-index: 1;
+  /* 确保文字在背景图上可见 */
+}
+
+.title {
+  font-size: 36px;
+  font-weight: bold;
+  color: #fff;
+  /* 让标题更加突出 */
+  margin-bottom: 15px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+  /* 文字阴影增加立体感 */
+}
+
+.text {
+  font-size: 24px;
+  color: #f0f0f0;
+  /* 白色副标题颜色 */
+  margin-bottom: 25px;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6);
+  /* 增加副标题阴影 */
+}
+
+.p1 {
+  font-size: 18px;
+  color: #fff;
+  /* 白色文本 */
+  margin: 5px 0;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.4);
+  /* 增加阴影效果 */
+}
+
+.modern2 {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 30px;
+}
+
+.card {
+  display: flex;
+  align-items: center;
+  background-color: #fff;
+  padding: 20px;
+  width: 45%;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+  text-decoration: none;
+  z-index: 2;
+  /* 确保卡片在其他元素之上 */
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+}
+
+.cardContent {
+  flex: 1;
+}
+
+.cardContent h3 {
+  font-size: 22px;
+  font-weight: 600;
+  color: #333;
+  /* 标题颜色保持较深 */
+}
+
+.cardContent p {
+  font-size: 16px;
+  color: #666;
+  /* 副标题颜色稍微深一点 */
+}
+
+.iconContainer {
+  padding-left: 20px;
+}
+
+.icon {
+  font-size: 40px;
+  color: #1890ff;
+  /* 保持图标颜色鲜艳 */
+}
+
+.txt .icon {
+  color: #52c41a;
+  /* 不同类别的图标颜色 */
+}
+
+.wp .icon {
+  color: #faad14;
+}

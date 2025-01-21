@@ -1,96 +1,64 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react'
 import {
-  AppstoreOutlined,
-  ContainerOutlined,
-  DesktopOutlined,
-  MailOutlined,
   MenuFoldOutlined,
   MenuUnfoldOutlined,
+  FolderOutlined,
+  EyeOutlined,
   PieChartOutlined,
-} from '@ant-design/icons';
-import { Layout, Menu } from 'antd';
-import { useNavigate, useLocation } from 'react-router-dom';
+  ClockCircleOutlined,
+  OrderedListOutlined,
+  ProfileOutlined,
+} from '@ant-design/icons'
+import { Layout, Menu } from 'antd'
+import { useNavigate, useLocation } from 'react-router-dom'
+import { connect } from 'react-redux'
 
-import axios from 'axios';
-
-const { Sider } = Layout;
+const { Sider } = Layout
 
 function SideMenu(props) {
-  const onClick = (e) => {};
+  console.log(props.isCollapsed)
+
+  const navigate = useNavigate()
+  const location = useLocation() // 获取当前的路由路径
+  const onClick = (e) => {
+    navigate(e.key) // 使用 navigate 进行页面跳转
+  }
+
   const items = [
     {
-      key: '1',
+      key: '/home',
       icon: <PieChartOutlined />,
       label: '首页',
     },
     {
-      key: '2',
-      icon: <DesktopOutlined />,
-      label: 'Option 2',
+      key: '/visualization',
+      icon: <EyeOutlined />,
+      label: '文本可视化',
     },
     {
-      key: '3',
-      icon: <ContainerOutlined />,
-      label: 'Option 3',
+      key: '/comprehension',
+      icon: <ProfileOutlined />,
+      label: '阅读理解',
     },
     {
-      key: 'sub1',
-      label: 'Navigation One',
-      icon: <MailOutlined />,
-      children: [
-        {
-          key: '5',
-          label: 'Option 5',
-        },
-        {
-          key: '6',
-          label: 'Option 6',
-        },
-        {
-          key: '7',
-          label: 'Option 7',
-        },
-        {
-          key: '8',
-          label: 'Option 8',
-        },
-      ],
+      key: '/levelled',
+      label: '分级阅读',
+      icon: <OrderedListOutlined />,
     },
     {
-      key: 'sub2',
-      label: 'Navigation Two',
-      icon: <AppstoreOutlined />,
-      children: [
-        {
-          key: '9',
-          label: 'Option 9',
-        },
-        {
-          key: '10',
-          label: 'Option 10',
-        },
-        {
-          key: 'sub3',
-          label: 'Submenu',
-          children: [
-            {
-              key: '11',
-              label: 'Option 11',
-            },
-            {
-              key: '12',
-              label: 'Option 12',
-            },
-          ],
-        },
-      ],
+      key: '/record',
+      label: '阅读记录',
+      icon: <ClockCircleOutlined />,
     },
-  ];
+    {
+      key: '/space',
+      label: '文档空间',
+      icon: <FolderOutlined />,
+    },
+  ]
+
   return (
-    <Sider
-      trigger={null}
-      collapsible
-    >
+    <Sider trigger={null} collapsible collapsed={props.isCollapsed}>
       <div
         style={{
           display: 'flex',
@@ -99,18 +67,35 @@ function SideMenu(props) {
           background: '#001529',
         }}
       >
-        <div className="logo">全球新闻发布系统</div>
+        <div
+          className='logo'
+          style={{
+            color: 'white',
+            textAlign: 'center',
+            fontSize: '20px',
+            fontWeight: 'bold',
+            padding: '16px',
+            background: '#001529',
+          }}
+        >
+          {props.isCollapsed ? '轻阅' : '轻阅AI'}
+        </div>
         <div style={{ flex: 1, overflow: 'auto' }}>
           <Menu
-            theme="dark"
+            theme='dark'
             onClick={onClick}
-            mode="inline"
+            mode='inline'
+            selectedKeys={[location.pathname]} // 根据当前路径设置选中的菜单项
             items={items} // 渲染菜单项
           />
         </div>
       </div>
     </Sider>
-  );
+  )
 }
 
-export default SideMenu;
+const mapStateToProps = (state) => ({
+  isCollapsed: state.CollapsedReducer.isCollapsed,
+})
+
+export default connect(mapStateToProps)(SideMenu)
