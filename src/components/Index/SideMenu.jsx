@@ -10,16 +10,16 @@ import {
   ProfileOutlined,
 } from '@ant-design/icons';
 import { Layout, Menu } from 'antd';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useLocation } from 'react-router-dom'; // 导入 useLocation 用于获取当前路径
 import { connect } from 'react-redux';
 
 const { Sider } = Layout;
 
 function SideMenu(props) {
-  console.log(props.isCollapsed);
-
   const navigate = useNavigate();
+  const location = useLocation(); // 获取当前的路由路径
 
+  // 更新选中的菜单项
   const onClick = (e) => {
     navigate(e.key); // 使用 navigate 进行页面跳转
   };
@@ -89,6 +89,7 @@ function SideMenu(props) {
             theme="dark"
             onClick={onClick}
             mode="inline"
+            selectedKeys={[location.pathname]} // 根据当前路径设置选中的菜单项
             items={items} // 渲染菜单项
           />
         </div>

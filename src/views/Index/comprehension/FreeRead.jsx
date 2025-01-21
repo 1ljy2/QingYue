@@ -13,22 +13,22 @@ const items = [
   {
     key: '1',
     label: '导读',
-    children: <Daodu />,
+    items: <Daodu />,
   },
   {
     key: '2',
     label: '对话',
-    children: <Duihua />,
+    items: <Duihua />,
   },
   {
     key: '3',
     label: '笔记',
-    children: <Biji />,
+    items: <Biji />,
   },
   {
     key: '4',
     label: '翻译',
-    children: <Fanyi />,
+    items: <Fanyi />,
   },
 ];
 

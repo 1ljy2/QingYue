@@ -8,6 +8,7 @@ import Record from '../../views/Index/record/Record';
 import Space from '../../views/Index/space/space';
 import Visualization from '../../views/Index/visualization/Visualization';
 import Yuedufenye from '../../views/Index/comprehension/FreeRead';
+import ReadingPage from '../../views/Index/reading/Readpage';
 const LocalRouterMap = {
   '/home': Home,
   '*': Nopermission,
@@ -17,6 +18,7 @@ const LocalRouterMap = {
   '/record': Record,
   '/space': Space,
   '/comprehension/yuedufenye': Yuedufenye,
+  '/readingpage/:id': ReadingPage,
 };
 
 function AiRouter() {

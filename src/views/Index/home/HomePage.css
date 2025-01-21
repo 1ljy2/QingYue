@@ -1,0 +1,84 @@
+/* HomePage.module.css */
+
+/* 背景设置 */
+body {
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+}
+
+.heroSection {
+    background: linear-gradient(to right, #1890ff, #001529);
+    color: #fff;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.heroContent {
+    max-width: 600px;
+}
+
+.heroTitle {
+    font-size: 3rem;
+    font-weight: 700;
+}
+
+.heroDescription {
+    font-size: 1.5rem;
+    margin: 20px 0;
+}
+
+.heroButton {
+    font-size: 1.25rem;
+    padding: 10px 20px;
+    border-radius: 5px;
+}
+
+.contentSection {
+    background-color: #f4f6f9;
+    padding: 50px 0;
+}
+
+.container {
+    width: 90%;
+    margin: 0 auto;
+}
+
+.featureCard {
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.featureCard:hover {
+    transform: translateY(-5px);
+    transition: all 0.3s;
+}
+
+.ctaSection {
+    background: #1890ff;
+    padding: 50px 0;
+    color: #fff;
+}
+
+.ctaSection .ant-btn {
+    font-size: 1.5rem;
+    padding: 12px 30px;
+    border-radius: 30px;
+}
+
+.footerSection {
+    background-color: #001529;
+    color: #fff;
+    padding: 30px 0;
+}
+
+.footerSection .container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footerSection .ant-row {
+    text-align: center;
+}
